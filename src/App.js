@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const App = (props) => {
   const [state, setState] = useState(props);
@@ -7,6 +7,18 @@ const App = (props) => {
   const reset = () => {
     setState(props);
   };
+
+  useEffect(() => {
+    console.log("ComponentDidMount");
+  }, []);
+
+  useEffect(() => {
+    console.log("componentDidUpdate");
+  });
+
+  useEffect(() => {
+    console.log("for name");
+  }, [name]);
 
   return (
     <>
